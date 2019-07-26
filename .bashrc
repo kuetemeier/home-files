@@ -117,3 +117,13 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.bash_powerline.sh
+
+#---------------
+# home function
+
+function home {
+   /usr/bin/git --git-dir=$HOME/.home-files/ --work-tree=$HOME $@
+}
+
+export PATH=$HOME/.home-local/bin:$HOME/.bin:$PATH
+
