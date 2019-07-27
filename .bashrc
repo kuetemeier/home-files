@@ -131,4 +131,7 @@ export PATH=$HOME_FILES/bin:$HOME_FILES/.local/bin:$PATH
 source $HOME_FILES/lib/git-subrepo/.rc
 source $HOME_FILES/lib/liquidprompt/liquidprompt
 
+alias h=home
+alias g=git
 
+export EDITOR=vi
