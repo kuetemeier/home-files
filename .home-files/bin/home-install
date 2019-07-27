@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#-------
-# clone
+#--------------------
+# clone (no history)
 
-git clone --bare git@s.kuetemeier.net:home-files $HOME/.home-repo
+git clone --depth 1 --bare git@s.kuetemeier.net:home-files $HOME/.home-repo
 
 #---------------
 # home function
