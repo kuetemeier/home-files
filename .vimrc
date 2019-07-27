@@ -154,7 +154,7 @@ vmap <silent> <expr> p <sid>Repl()
 " Theme and Color {{{
 
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 "font is antialiased Terminus
 " set noantialias
 set guifont=Terminus\ (TTF):h14
