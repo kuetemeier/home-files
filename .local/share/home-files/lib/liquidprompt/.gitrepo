@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nojhan/liquidprompt
+	branch = master
+	commit = eda83efe4e0044f880370ed5e92aa7e3fdbef971
+	parent = 05fe0794a5028f4bbc16afe085b43f7e8e476735
+	method = merge
+	cmdver = 0.4.0
