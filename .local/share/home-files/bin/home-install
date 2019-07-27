@@ -14,7 +14,7 @@ echo "Creating... $HOME_FILES"
 echo "Creating... $HOME_FILES_BACKUP for backing up existing files"
 mkdir -p $HOME_FILES_BACKUP
 
-git clone --depth 1 --bare git@s.kuetemeier.net:home-files $HOME_FILES_REPO
+git clone --depth 1 --bare git@github.com:kuetemeier/home-files.git $HOME_FILES_REPO
 
 #---------------
 # home function
