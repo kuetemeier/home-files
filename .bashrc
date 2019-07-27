@@ -116,14 +116,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/.bash_powerline.sh
+export HOME_FILES=$HOME/.local/share/home-files
+source $HOME_FILES/.bash/.bash_powerline.sh
 
 #---------------
 # home function
 
 function home {
-   /usr/bin/git --git-dir=$HOME/.home-files/ --work-tree=$HOME $@
+   /usr/bin/git --git-dir=$HOME_FILES/.repo/ --work-tree=$HOME $@
 }
 
-export PATH=$HOME/.home-local/bin:$HOME/.bin:$PATH
+export PATH=$HOME_FILES/bin:$HOME_FILES/.local/bin:$PATH
 
