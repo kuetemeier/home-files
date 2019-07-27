@@ -8,7 +8,7 @@ My (Jörg Kütemeier - https://kuetemeier.com) common home directory and dot fil
 ## Install
 
 ```
-curl -Lks https://.../install.sh | /bin/bash
+curl -Lks https://raw.githubusercontent.com/kuetemeier/home-files/master/.local/share/home-files/bin/home-install | /bin/bash
 ```
 
 According to the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) (followed by Gnome and Ubuntu) the Repository is installed to `$HOME/.local/share/home-files/.repo` and all other files are checked out to the `$HOME` directory and subdirectories, as layed out in this repo.
