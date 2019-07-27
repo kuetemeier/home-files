@@ -3,13 +3,13 @@
 #-------
 # clone
 
-git clone --bare git@s.kuetemeier.net:home-files $HOME/.home-files
+git clone --bare git@s.kuetemeier.net:home-files $HOME/.home-repo
 
 #---------------
 # home function
 
 function home {
-   /usr/bin/git --git-dir=$HOME/.home-files/ --work-tree=$HOME $@
+   /usr/bin/git --git-dir=$HOME/.home-repo/ --work-tree=$HOME $@
 }
 
 #--------
@@ -34,6 +34,6 @@ done
 #----------
 # checkout
 
-home ls-tree --name-only -r master . | xargs git --git-dir=$HOME/.home-files/ --work-tree=$HOME checkout master --
+home ls-tree --name-only -r master . | xargs git --git-dir=$HOME/.home-repo/ --work-tree=$HOME checkout master --
 
 home config status.showUntrackedFiles no
