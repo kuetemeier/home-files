@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#--------------------
+# clone (no history)
+
+HOME_FILES=$HOME/.local/share/home-files
+HOME_FILES_REPO=$HROOT/.repo
+HOME_FIELS_BACKUP=$HROOT/.backup
+
+echo "Creating... $HOME_FILES"
+# not needed as long as $HOME_FILES_BACKUP is in $HOME_FILES
+# mkdir -p $HOME_FILES
+
+echo "Creating... $HOME_FILES_BACKUP for backing up existing files"
+mkdir -p $HOME_FILES_BACKUP
+
+git clone --depth 1 --bare git@s.kuetemeier.net:home-files $HOME_FILES_REPO
+
+#---------------
+# home function
+
+function home {
+   /usr/bin/git --git-dir=$HOME_FILES_REPO --work-tree=$HOME $@
+}
+
+#--------
+# backup
+
+echo "Backing up home-files..."
+
+FILES=`home ls-tree --name-only -r master .`
+
+for f in $FILES ; do
+  if [ -e $HOME/$f ]; then
+    echo -n "... backing up: "
+    echo $f
+    mv $HOME/$f $HOME_FILE_BACKUP/$f
+  fi
+done
+
+#----------
+# checkout
+
+home ls-tree --name-only -r master . | xargs git --git-dir=$HOME_FILES_REPO --work-tree=$HOME checkout master --
+
+home config status.showUntrackedFiles no
