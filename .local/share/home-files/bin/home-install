@@ -4,8 +4,8 @@
 # clone (no history)
 
 HOME_FILES=$HOME/.local/share/home-files
-HOME_FILES_REPO=$HROOT/.repo
-HOME_FIELS_BACKUP=$HROOT/.backup
+HOME_FILES_REPO=$HOME_FILES/.repo
+HOME_FILES_BACKUP=$HOME_FILES/.backup
 
 echo "Creating... $HOME_FILES"
 # not needed as long as $HOME_FILES_BACKUP is in $HOME_FILES
@@ -23,6 +23,8 @@ function home {
    /usr/bin/git --git-dir=$HOME_FILES_REPO --work-tree=$HOME $@
 }
 
+home branch --set-upstream-to=origin/master master
+
 #--------
 # backup
 
@@ -34,7 +36,7 @@ for f in $FILES ; do
   if [ -e $HOME/$f ]; then
     echo -n "... backing up: "
     echo $f
-    mv $HOME/$f $HOME_FILE_BACKUP/$f
+    mv $HOME/$f $HOME_FILES_BACKUP/$f
   fi
 done
 
