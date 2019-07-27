@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 export HOME_FILES=$HOME/.local/share/home-files
-source $HOME_FILES/.bash/.bash_powerline.sh
+#source $HOME_FILES/.bash/.bash_powerline.sh
 
 #---------------
 # home function
@@ -127,4 +127,8 @@ function home {
 }
 
 export PATH=$HOME_FILES/bin:$HOME_FILES/.local/bin:$PATH
+
+source $HOME_FILES/lib/git-subrepo/.rc
+source $HOME_FILES/lib/liquidprompt/liquidprompt
+
 
